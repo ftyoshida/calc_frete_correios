@@ -1,10 +1,10 @@
-# calc_frete_correios
-Calculo de frete e prazo dos Correios
-
+# Calculo de frete e prazo dos Correios
 
 Exemplo de envio dos dados da encomenda JSON via POST:
 
 Content-Type : application/json
+
+Test file : dados-da-encomenda.json
 
 ``` bash
 {
@@ -65,11 +65,20 @@ Exemplo de retorno dos dados do frete em JSON:
 ```
 
 
+## Criacao da imagem e execucao
+
 ``` bash
 Criar a imagem Docker:
 $ sudo docker build -t calc-frete-ws .
 
 Executar container Docker:
 $ sudo docker run -p 8080:8080 calc-frete-ws
+```
+
+## Teste 
+
+``` bash
+Testar serviço via curl:
+$ curl --data @dados-da-encomenda.json -H "Content-Type: application/json" -X POST http://3.238.242.166:8080/calc_frete_correios
 ```
 
