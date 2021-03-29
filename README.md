@@ -6,6 +6,7 @@ Exemplo de envio dos dados da encomenda JSON via POST:
 
 Content-Type : application/json
 
+``` bash
 {
 "nCdEmpresa": "",
 "sDsSenha": "",
@@ -22,8 +23,11 @@ Content-Type : application/json
 "nVlValorDeclarado": "0",
 "sCdAvisoRecebimento": "n"
 }
+```
 
-Codigos de Servico (nCdServico)
+## Codigos de Servico (nCdServico)
+
+``` bash
 
 Código	:	Serviço
 04014	:	SEDEX à vista
@@ -32,12 +36,15 @@ Código	:	Serviço
 04790	:	SEDEX 10 (à vista)
 04804	:	SEDEX Hoje à vista
 
+```
+
 Fonte:
 https://www.correios.com.br/enviar-e-receber/ferramentas/calculador-remoto-de-precos-e-prazos/pdf/manual-de-implementacao-do-calculo-remoto-de-precos-e-prazos
 
 
 Exemplo de retorno dos dados do frete em JSON:
 
+``` bash
 {
     "Servicos": {
         "cServico": {
@@ -55,11 +62,14 @@ Exemplo de retorno dos dados do frete em JSON:
             "MsgErro": null
         }
     }
+```
 
 
+``` bash
 Criar a imagem Docker:
 $ sudo docker build -t calc-frete-ws .
 
 Executar container Docker:
 $ sudo docker run -p 8080:8080 calc-frete-ws
+```
 
